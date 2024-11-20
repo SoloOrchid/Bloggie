@@ -4,11 +4,12 @@ namespace Bloggie.Web.Repositories
 {
     public interface IBlogpostRepository
     {
-        Task<IEnumerable<BlogPost>> GetAllASync();
+        Task<IEnumerable<BlogPost>> GetAllAsync();
 
         Task<BlogPost> GetAsync(Guid Id);
+        Task<BlogPost> GetAsync(string urlHandle);
 
-        Task<BlogPost> AddASync(BlogPost blogPost);
+        Task<BlogPost> AddAsync(BlogPost blogPost);
 
         Task<BlogPost> UpdateAsync(BlogPost blogPost);
 

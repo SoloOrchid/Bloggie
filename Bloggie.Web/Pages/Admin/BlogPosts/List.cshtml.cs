@@ -29,7 +29,7 @@ namespace Bloggie.Web.Pages.Admin.BlogPosts
                 ViewData["Notification"] = JsonSerializer.Deserialize<Notification>(notificaitonJson);
             }
 
-            BlogPosts = (await blogpostRepository.GetAllASync())?.ToList();
+            BlogPosts = (await blogpostRepository.GetAllAsync())?.ToList();
         }
     }
 }

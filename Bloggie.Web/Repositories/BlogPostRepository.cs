@@ -13,7 +13,7 @@ namespace Bloggie.Web.Repositories
             this.bloggieDbContext = bloggieDbContext;
         }
 
-        public async Task<BlogPost> AddASync(BlogPost blogPost)
+        public async Task<BlogPost> AddAsync(BlogPost blogPost)
         {
             await bloggieDbContext.BlogPosts.AddAsync(blogPost);
             await bloggieDbContext.SaveChangesAsync();
@@ -34,14 +34,19 @@ namespace Bloggie.Web.Repositories
             return false;
         }
 
-        public async Task<IEnumerable<BlogPost>> GetAllASync()
+        public async Task<IEnumerable<BlogPost>> GetAllAsync()
         {
-           return await bloggieDbContext.BlogPosts.ToListAsync();
+            return await bloggieDbContext.BlogPosts.ToListAsync();
         }
 
         public async Task<BlogPost> GetAsync(Guid id)
         {
             return await bloggieDbContext.BlogPosts.FindAsync(id);
+        }
+
+        public async Task<BlogPost> GetAsync(string urlHandle)
+        {
+            return await bloggieDbContext.BlogPosts.FirstOrDefaultAsync(x => x.UrlHandler == urlHandle);
         }
 
         public async Task<BlogPost> UpdateAsync(BlogPost blogPost)

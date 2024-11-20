@@ -14,6 +14,8 @@ namespace Bloggie.Web.Pages.Admin.BlogPosts
 
         [BindProperty]
         public AddBlogPost AddBlogPostRequest { get; set; }
+        [BindProperty]
+        public IFormFile FeaturedImage { get; set; }
 
         public AddModel(IBlogpostRepository blogpostRepository) 
         {
@@ -40,7 +42,7 @@ namespace Bloggie.Web.Pages.Admin.BlogPosts
                 Visable = AddBlogPostRequest.Visable,
             };
 
-            await blogpostRepository.AddASync(blogPost);
+            await blogpostRepository.AddAsync(blogPost);
 
             var notificaiton = new Notification
             {

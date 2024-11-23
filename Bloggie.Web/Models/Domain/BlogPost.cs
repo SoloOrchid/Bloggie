@@ -12,5 +12,8 @@
         public DateTime PublishedDate { get; set; }
         public string Author { get; set; }
         public bool Visable { get; set; }
+
+        //relationship
+        public ICollection<Tag> Tags { get; set; }
     }
 }

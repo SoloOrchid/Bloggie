@@ -4,6 +4,7 @@ using Bloggie.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bloggie.Web.Migrations.AuthDb
 {
     [DbContext(typeof(AuthDbContext))]
-    partial class AuthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241124065323_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -166,15 +169,15 @@ namespace Bloggie.Web.Migrations.AuthDb
                         {
                             Id = "c052ffb4-245b-4c3c-8390-f1bd806828e2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "81bda475-eafc-441c-a149-6bbf106c4624",
+                            ConcurrencyStamp = "e1980d60-8c25-4a75-a6a3-4981a270986e",
                             Email = "superadmin@bloggie.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPERADMIN@BLOGGIE.COM",
                             NormalizedUserName = "SUPERADMIN@BLOGGIE.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEMDMO1bUM7D27x6q+jFeoZF8FOj8hgdZga/fYIdx9nHf7qQq/6oEWa/cqhP9xPIQwg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEK6f02jEqi0mc4+x9D+FyGgS9PiagHNq5I5pqUL2phrgq+GYYpsJ3UKiBEykVOVzXg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "10cd252c-6369-48d3-bd9d-119dbd2078bd",
+                            SecurityStamp = "93d0abf9-33a7-45c6-a22e-f0711f068e62",
                             TwoFactorEnabled = false,
                             UserName = "superadmin@bloggie.com"
                         });
